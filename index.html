@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Translation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <!-- Top language selection row -->
+        <div class="language-row">
+            <div class="language-group">
+                <select class="language-select" id="sourceLanguage">
+                    <option value="auto" selected>Detect language</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                </select>
+                <select class="language-select" id="sourceLanguageSecondary">
+                    <option value="en" selected>English</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            
+            <button class="swap-button" id="swapLanguages">⇅</button>
+            
+            <div class="language-group">
+                <select class="language-select" id="targetLanguage">
+                    <option value="fr" selected>French</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Text panels row -->
+        <div class="panels-row">
+            <!-- Left panel - Input -->
+            <div class="panel">
+                <div class="panel-label">Input</div>
+                <textarea 
+                    class="panel-textarea" 
+                    id="sourceText" 
+                    maxlength="500"
+                >Hello, how are you</textarea>
+                <div class="panel-footer">
+                    <div class="footer-left">
+                        <button class="footer-btn" id="speakSource">
+                            <span class="icon">🔊</span> Listen
+                        </button>
+                        <button class="footer-btn" id="copySource">
+                            <span class="icon">📋</span> Copy
+                        </button>
+                    </div>
+                    <div class="char-counter">
+                        <span id="charCount">18</span>/500
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right panel - Output -->
+            <div class="panel">
+                <div class="panel-label">Output</div>
+                <textarea 
+                    class="panel-textarea panel-output" 
+                    id="targetText" 
+                    readonly
+                >Bonjour, comment allez-vous</textarea>
+                <div class="panel-footer">
+                    <div class="footer-left">
+                        <button class="footer-btn" id="speakTarget">
+                            <span class="icon">🔊</span> Listen
+                        </button>
+                        <button class="footer-btn" id="copyTarget">
+                            <span class="icon">📋</span> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Translate button -->
+        <button class="translate-btn" id="translateBtn">Translate</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
